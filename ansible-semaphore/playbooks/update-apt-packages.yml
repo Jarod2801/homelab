@@ -8,6 +8,9 @@
       apt:
         upgrade: yes
         update_cache: yes
+      register: debian
+    #- debug:
+    #    msg: " {{ debian.stdout_lines }} "
     - name: List installed and updated packages
       shell: grep -E "^$(date +%Y-%m-%d).+ (install|upgrade) " /var/log/dpkg.log |cut -d " " -f 3-5
       register: result
