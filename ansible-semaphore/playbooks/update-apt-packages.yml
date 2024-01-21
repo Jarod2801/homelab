@@ -3,9 +3,7 @@
   # become: true
   # become_user: root
   tasks:
-    - name: update apt packages
-      become: yes
-      sudo: yes
+    - name: update apt package
       apt:
         upgrade: yes
         update_cache: yes
